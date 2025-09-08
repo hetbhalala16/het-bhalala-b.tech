@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      color: #1e293b;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-weight: 800; font-size: 20px; }
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #475569;
+      font-weight: 500;
+    }
+    nav a:hover { color: #0ea5e9; }
+    .btn {
+      background: #10b981;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+    form {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .form-row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+    .form-row .field {
+      flex: 1;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    textarea { resize: vertical; min-height: 100px; }
+    .rating {
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .rating input {
+      display: none;
+    }
+    .rating label {
+      font-size: 24px;
+      color: #cbd5e1;
+      cursor: pointer;
+    }
+    .rating input:checked ~ label,
+    .rating label:hover,
+    .rating label:hover ~ label {
+      color: #f59e0b; /* gold */
+    }
+    button {
+      margin-top: 16px;
+      background: #0ea5e9;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover { background: #0369a1; }
+   
+.footer {
+  background: #1e1b4b; /* dark purple */
+  color: #e2e8f0;
+  padding: 30px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer-logo h2 {
+  margin: 0;
+  font-weight: 700;
+  color: #fff;
+}
+.footer-apps img {
+  height: 40px;
+  margin-left: 10px;
+}
+.footer hr {
+  border: none;
+  border-top: 1px solid #334155;
+  margin: 20px 0;
+}
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.footer-links h4 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+.footer-links a {
+  display: block;
+  margin: 4px 0;
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+.footer-links a:hover {
+  color: #10b981; /* green hover */
+}
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+}
+  </style>
+</head>
+<body>
+  
+  <header style="border: 2px solid black;">
+    <div class="logo">OANDA Clone</div>
+    <nav>
+         <a href="home.html">Home</a>
+      <a href="Page1.html">Currency Converter</a>
+      <a href="Page2.html">Exchange Rates API</a>
+      <a href="Page3.html">FX Payments</a>
+      <a href="contact.html">About</a>
+    </nav>
+    <a href="contact.html" class="btn">Contact us</a>
+  </header>
+
+  
+  <div class="container" >
+    <h1>Contact Us</h1>
+    <form>
+      <div class="form-row">
+        <div class="field">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
+        </div>
+        <div class="field">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="phone">Telephone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter phone number">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="country">Country</label>
+          <select id="country" name="country" required>
+            <option value="">-- Select Country --</option>
+            <option>India</option>
+            <option>USA</option>
+            <option>UK</option>
+            <option>Canada</option>
+            <option>Australia</option>
+            <option>Germany</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Rate Our Service</label>
+        <div class="rating">
+          <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+          <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+          <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+          <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+          <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message..."></textarea>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <footer class="footer">
+  <div class="footer-container">
+
+    
+    <div class="footer-top">
+      <div class="footer-logo">
+        <h2>OANDA <span style="font-size:14px; font-weight:400;">Clone</span></h2>
+      </div>
+     
+    </div>
+
+    
+
+   
+    <div class="footer-links">
+      <div>
+        <h4>Currency Converter</h4>
+        <a href="Page1.html">Currency Converter</a>
+        <a href="#">Embeddable Converter</a>
+        <a href="#">Historical Converter</a>
+      </div>
+      <div>
+        <h4>Exchange Rates API</h4>
+        <a href="Page2.html">Exchange Rates API</a>
+        <a href="#">Free Trial</a>
+        <a href="#">API Plans</a>
+        <a href="#">Data Accuracy</a>
+        <a href="#">Integration Matrix</a>
+        <a href="#">Developers Resources</a>
+      </div>
+      <div>
+        <h4>FX Payments</h4>
+        <a href="Page3.html">FX Payments</a>
+        <a href="#">Corporate Payments</a>
+        <a href="#">Individual Payments</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="contact.html">OANDA Group</a>
+        <a href="#">Become a Partner</a>
+        <a href="#">Our Blog</a>
+        <a href="#">Contact Us</a>
+        <a href="#">FAQs</a>
+        <a href="#">Legal</a>
+        <a href="#">Cookies Settings</a>
+      </div>
+    </div>
+
+ 
+    <div class="footer-bottom">
+      <p>© 2025 OANDA Clone | Built for Educational Purposes Only</p>
+    </div>
+  </div>
+</footer>
