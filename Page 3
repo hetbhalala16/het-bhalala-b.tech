@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* Navbar */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 12px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 20px;
+      color: #0f172a;
+    }
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #475569;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #0ea5e9;
+    }
+    .btn {
+      background: #10b981;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Main Converter */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .converter {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+    @media(max-width: 900px) {
+      .converter {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Card Boxes */
+    .box {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.05);
+    }
+    .box h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+    .field {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    .swap {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 20px;
+      color: #0ea5e9;
+    }
+
+    /* Chart */
+    .chart {
+      height: 220px;
+      background: linear-gradient(to top, #e0f2fe, #fff);
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .stats {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .stats table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .stats td {
+      padding: 6px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .stats tr:last-child td {
+      border: none;
+    }
+
+  
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9ff;
+      color: #333;
+    }
+
+    .hero {
+      background: #eef3ff;
+      text-align: center;
+      padding: 60px 20px;
+      border: 3px solid black;
+    }
+    .hero h2 {
+      font-size: 34px;
+      color: #14213d;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .hero .btn {
+      margin: 15px 10px;
+      padding: 12px 25px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 6px;
+    }
+    .btn-green { background: #00c389; color: white; }
+    .btn-outline { border: 2px solid #14213d; background: none; color: #14213d; }
+
+    .info {
+      display: flex;
+      justify-content: space-around;
+      padding: 50px;
+      text-align: center;
+      border: 1px solid black;
+    }
+    .info div {
+      width: 30%;
+      padding: 15px;
+    }
+    .info h3 {
+      color: #14213d;
+    }
+
+    .features {
+      background: #f1ebff;
+      padding: 50px 30px;
+      text-align: center;
+    }
+    .features h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #14213d;
+    }
+    .feature-boxes {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .feature-box {
+      background: white;
+      width: 45%;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .feature-box h3 {
+      color: #14213d;
+    }
+
+    
+    .cta {
+      background: #eef3ff;
+      padding: 40px;
+      text-align: center;
+      border: 2px solid black;
+    }
+    .cta h2 {
+      color: #14213d;
+      margin-bottom: 15px;
+    }
+    .cta p {
+      max-width: 600px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+
+   <header>
+    <div class="logo">OANDA Clone</div>
+    <nav>
+         <a href="home.html">Home</a>
+      <a href="Page1.html">Currency Converter</a>
+      <a href="Page2.html">Exchange Rates API</a>
+      <a href="Page3.html">FX Payments</a>
+      <a href="contact.html">About</a>
+    </nav>
+    <a href="contact.html" class="btn">Contact us</a>
+  </header>
+
+ 
+
+  <div class="hero">
+    <h2>Protect your company's bottom line</h2>
+    <p>Access accurate, real-time FX data from globally recognized banks and market makers.</p>
+    <button class="btn btn-green">Free Trial</button>
+    <button class="btn btn-outline"> Contact Us</button>
+  </div>
+
+  <div class="info">
+    <div style="border: 1px solid black;">
+      <h3>100+ Sources</h3>
+      <p>Trusted data from interbank participants and central banks worldwide.</p>
+    </div>
+    <div style="border: 1px solid black;">
+      <h3>Aggregated Data</h3>
+      <p>Time-weighted averages (TWAP) and automated delivery via API.</p>
+    </div>
+    <div style="border: 1px solid black;">
+      <h3>Reliable</h3>
+      <p>Over 12M+ users monthly trust our FX conversion and data services.</p>
+    </div>
+  </div>
+
+  <div class="features">
+    <h2>Accurate FX Data You Can Trust</h2>
+    <div class="feature-boxes">
+      <div class="feature-box">
+        <h3>How We Source Pricing</h3>
+        <p>We analyze bank data individually, filter outliers, and calculate trustworthy rates.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Rate Aggregators</h3>
+        <p>Unlike aggregators, we use real traded prices ensuring accurate FX market data.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h2>Protect your business. Reassure your auditors.</h2>
+    <p>Our rates reflect real FX transactions. Eliminate risks of inaccurate data and ensure compliance with global standards.</p>
+  </div>
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+
+   
+    <div class="footer-top">
+      <div class="footer-logo">
+        <h2>OANDA <span style="font-size:14px; font-weight:400;">Clone</span></h2>
+      </div>
+     
+    </div>
+
+    
+
+   
+    <div class="footer-links">
+      <div>
+        <h4>Currency Converter</h4>
+        <a href="Page1.html">Currency Converter</a>
+        <a href="#">Embeddable Converter</a>
+        <a href="#">Historical Converter</a>
+      </div>
+      <div>
+        <h4>Exchange Rates API</h4>
+        <a href="Page2.html">Exchange Rates API</a>
+        <a href="#">Free Trial</a>
+        <a href="#">API Plans</a>
+        <a href="#">Data Accuracy</a>
+        <a href="#">Integration Matrix</a>
+        <a href="#">Developers Resources</a>
+      </div>
+      <div>
+        <h4>FX Payments</h4>
+        <a href="Page3.html">FX Payments</a>
+        <a href="#">Corporate Payments</a>
+        <a href="#">Individual Payments</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="contact.html">OANDA Group</a>
+        <a href="#">Become a Partner</a>
+        <a href="#">Our Blog</a>
+        <a href="#">Contact Us</a>
+        <a href="#">FAQs</a>
+        <a href="#">Legal</a>
+        <a href="#">Cookies Settings</a>
+      </div>
+    </div>
+
+    <!-- Bottom text -->
+    <div class="footer-bottom">
+      <p>© 2025 OANDA Clone | Built for Educational Purposes Only</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.footer {
+  background: #1e1b4b; 
+  color: #e2e8f0;
+  padding: 30px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer-logo h2 {
+  margin: 0;
+  font-weight: 700;
+  color: #fff;
+}
+.footer-apps img {
+  height: 40px;
+  margin-left: 10px;
+}
+.footer hr {
+  border: none;
+  border-top: 1px solid #334155;
+  margin: 20px 0;
+}
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.footer-links h4 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+.footer-links a {
+  display: block;
+  margin: 4px 0;
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+.footer-links a:hover {
+  color: #10b981; 
+}
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+}
+</style>
+
+
+
+</body>
+</html>
